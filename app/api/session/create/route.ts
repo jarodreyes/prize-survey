@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
           })
           .returning()
 
-        const joinUrl = `${process.env.NEXTAUTH_URL}/join?code=${code}`
+        const joinUrl = `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/join?code=${code}`
 
         // Publish realtime event
         await realtime.publish(`session:${session.id}`, 'session_created', {
