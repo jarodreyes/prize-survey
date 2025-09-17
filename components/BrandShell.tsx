@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import Image from 'next/image'
 
 interface BrandShellProps {
   children: ReactNode
@@ -12,8 +13,14 @@ export function BrandShell({ children }: BrandShellProps) {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-accent to-accent-2 rounded-lg flex items-center justify-center">
-                <span className="text-lg font-mono font-bold text-background">S</span>
+              <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center">
+                <Image 
+                  src="/images/signalfire-logo.png" 
+                  alt="SignalFire" 
+                  width={32} 
+                  height={32}
+                  className="object-contain"
+                />
               </div>
               <div>
                 <h1 className="dev-heading text-lg text-ink">SignalFire Survey</h1>
