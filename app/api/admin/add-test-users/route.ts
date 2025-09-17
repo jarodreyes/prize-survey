@@ -2,7 +2,21 @@ import { NextRequest, NextResponse } from 'next/server'
 import { db, isDatabaseAvailable } from '@/lib/db'
 import { sessions, participants, responses, activity } from '@/lib/schema'
 import { eq } from 'drizzle-orm'
-import { getNameInitial } from '@/lib/utils'
+// Utility function to get name with initial (inline to avoid import issues)
+function getNameInitial(name: string | null | undefined, login?: string): string {
+  if (!name) {
+    return login ? login.charAt(0).toUpperCase() + '.' : 'A.'
+  }
+  
+  const nameParts = name.trim().split(' ')
+  if (nameParts.length < 2) {
+    return name.charAt(0).toUpperCase() + '.'
+  }
+  
+  const firstName = nameParts[0]
+  const lastName = nameParts[nameParts.length - 1]
+  return `${firstName} ${lastName.charAt(0).toUpperCase()}.`
+}
 
 const generateTestUser = (index: number) => {
   const firstNames = [
