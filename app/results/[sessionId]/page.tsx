@@ -9,8 +9,10 @@ import { ActivityFeed } from '@/components/ActivityFeed'
 import { QRClient } from '@/components/QRClient'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts'
 import { FUN_QUESTIONS } from '@/lib/constants'
-import { BarChart3, PieChart as PieChartIcon, Users } from 'lucide-react'
+import { BarChart3, PieChart as PieChartIcon, Users, Gift } from 'lucide-react'
 import { realtime } from '@/lib/realtime'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 
 interface ResultsData {
   session: {
@@ -180,7 +182,19 @@ export default function ResultsPage() {
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="dev-heading text-3xl mb-2">Live Results</h1>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <h1 className="dev-heading text-3xl">Live Results</h1>
+            <Link href={`/raffle/${sessionId}`}>
+              <Button 
+                variant="outline" 
+                size="sm"
+                className="flex items-center gap-2 bg-gradient-to-r from-accent/10 to-accent-2/10 border-accent/30 hover:border-accent/50"
+              >
+                <Gift className="w-4 h-4" />
+                Prize Raffle
+              </Button>
+            </Link>
+          </div>
           <p className="text-muted">
             Session: <span className="font-mono text-accent">{results.session.code}</span>
             {!results.session.active && <span className="text-warn ml-2">(Ended)</span>}
