@@ -113,8 +113,7 @@ async function seed() {
         .insert(participants)
         .values({
           sessionId: session.id,
-          githubId: data.githubId,
-          githubLogin: data.githubLogin,
+          userId: data.githubId,
           name: data.name,
           email: data.email,
         })
