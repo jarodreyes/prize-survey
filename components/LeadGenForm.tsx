@@ -182,6 +182,22 @@ export function LeadGenForm({ sessionCode, onSubmit, isSubmitting }: LeadGenForm
             </div>
           </div>
 
+          {/* Fun Questions */}
+          <div className="space-y-6">
+            <QuestionCard 
+              onAnswersChange={setFunAnswers}
+              initialAnswers={funAnswers}
+            />
+            
+            {Object.keys(funAnswers).length < 3 && (
+              <div className="dev-card p-4 border-warn/20 bg-warn/5">
+                <p className="text-sm text-warn">
+                  Please answer all questions above to enable submission.
+                </p>
+              </div>
+            )}
+          </div>
+
           {/* Terms Agreement */}
           <div className="space-y-3">
             <div className="flex items-start space-x-3">
@@ -214,19 +230,6 @@ export function LeadGenForm({ sessionCode, onSubmit, isSubmitting }: LeadGenForm
         </form>
       </div>
 
-      {/* Fun Questions */}
-      <QuestionCard 
-        onAnswersChange={setFunAnswers}
-        initialAnswers={funAnswers}
-      />
-
-      {Object.keys(funAnswers).length < 3 && (
-        <div className="dev-card p-4 border-warn/20 bg-warn/5">
-          <p className="text-sm text-warn">
-            Please answer all fun questions above to enable submission.
-          </p>
-        </div>
-      )}
     </div>
   )
 }
