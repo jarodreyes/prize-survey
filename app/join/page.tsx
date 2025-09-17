@@ -13,7 +13,7 @@ interface SessionInfo {
   id: string
   code: string
   active: boolean
-  createdAt: string
+  createdAt: string | Date
 }
 
 export default function JoinPage() {
