@@ -192,7 +192,7 @@ export default function JoinPage() {
                     <span className="text-sm">Valid session found!</span>
                   </div>
                   <p className="text-xs text-muted mt-1">
-                    Created {new Date(sessionInfo.createdAt).toLocaleString()}
+                    Created {new Date(sessionInfo?.createdAt || '').toLocaleString()}
                   </p>
                 </div>
               )}
