@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import '../styles/palette.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--panel) / 0.3);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--muted));
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--accent) / 0.7);
+  }
+}
+
+@layer components {
+  .dev-card {
+    @apply bg-card border border-white/5 rounded-lg shadow-lg backdrop-blur-sm;
+  }
+  
+  .dev-button {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium 
+           transition-colors focus-visible:outline-none focus-visible:ring-2 
+           focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 
+           disabled:pointer-events-none ring-offset-background;
+  }
+  
+  .dev-button-primary {
+    @apply dev-button bg-primary text-primary-foreground hover:bg-primary/90 
+           h-10 py-2 px-4 min-w-[120px];
+  }
+  
+  .dev-button-secondary {
+    @apply dev-button bg-secondary text-secondary-foreground hover:bg-secondary/80 
+           border border-input h-10 py-2 px-4;
+  }
+  
+  .dev-input {
+    @apply flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 
+           text-sm ring-offset-background file:border-0 file:bg-transparent 
+           file:text-sm file:font-medium placeholder:text-muted-foreground 
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring 
+           focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  
+  .dev-heading {
+    @apply font-mono font-semibold tracking-tight;
+  }
+  
+  .activity-item {
+    @apply flex items-center gap-2 p-2 rounded text-sm text-muted-foreground
+           border-l-2 border-transparent hover:border-accent/50 hover:bg-accent/5
+           transition-all duration-200;
+  }
+  
+  .prize-card {
+    @apply dev-card p-4 transition-all duration-300 hover:shadow-xl;
+  }
+  
+  .prize-card.unlocked {
+    @apply border-success/50 bg-success/5;
+  }
+  
+  .prize-card.locked {
+    @apply opacity-60;
+  }
+}

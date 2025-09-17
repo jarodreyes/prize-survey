@@ -1,0 +1,48 @@
+/* Dev-nerdy color palette */
+:root {
+  --bg: #0B0E14;
+  --panel: #111826;
+  --ink: #E5E7EB;
+  --muted: #9CA3AF;
+  --accent: #60A5FA;
+  --accent-2: #22D3EE;
+  --success: #10B981;
+  --warn: #F59E0B;
+  --danger: #EF4444;
+  
+  /* HSL versions for Tailwind */
+  --success: 160 84% 39%;
+  --warn: 38 92% 50%;
+  --danger: 0 84% 60%;
+  
+  /* Tailwind CSS variables mapped to our palette */
+  --background: 11 14 20; /* --bg */
+  --foreground: 229 231 235; /* --ink */
+  
+  --card: 17 24 38; /* --panel */
+  --card-foreground: 229 231 235; /* --ink */
+  
+  --popover: 17 24 38; /* --panel */
+  --popover-foreground: 229 231 235; /* --ink */
+  
+  --primary: 96 165 250; /* --accent */
+  --primary-foreground: 11 14 20; /* --bg */
+  
+  --secondary: 17 24 38; /* --panel */
+  --secondary-foreground: 229 231 235; /* --ink */
+  
+  --muted: 17 24 38; /* --panel */
+  --muted-foreground: 156 163 175; /* --muted */
+  
+  --accent: 96 165 250; /* --accent */
+  --accent-foreground: 11 14 20; /* --bg */
+  
+  --destructive: 239 68 68; /* --danger */
+  --destructive-foreground: 229 231 235; /* --ink */
+  
+  --border: 31 41 55; /* slightly lighter than --panel */
+  --input: 17 24 38; /* --panel */
+  --ring: 96 165 250; /* --accent */
+  
+  --radius: 0.5rem;
+}
