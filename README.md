@@ -1,6 +1,8 @@
-# SignalFire Survey
+# Prize Survey
 
-A real-time survey platform for events with live results, prize unlocks, and GitHub authentication.
+A real-time survey platform for events with live results and prize unlocks.
+
+🚀 **Live on Vercel**: https://prize-survey-6ltgsgrhs-jarodreyes-projects.vercel.app
 
 ## Features
 
