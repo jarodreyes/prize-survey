@@ -138,7 +138,7 @@ export default function ResultsPage() {
     return question?.question || questionId
   }
 
-  const joinUrl = `${typeof window !== 'undefined' ? window.location.origin : ''}/join`
+  const joinUrl = `${typeof window !== 'undefined' ? window.location.origin : ''}/join?code=${results.session.code}`
 
   return (
     <BrandShell>
@@ -156,10 +156,7 @@ export default function ResultsPage() {
                   Scan QR code or visit:
                 </div>
                 <div className="text-black font-bold text-lg break-all">
-                  {typeof window !== 'undefined' ? window.location.host : ''}/join
-                </div>
-                <div className="text-pink-600 font-bold text-xl">
-                  Session Code: {results?.session.code || '------'}
+                  {typeof window !== 'undefined' ? window.location.host : ''}/join?code={results?.session.code || '------'}
                 </div>
               </div>
             </div>
@@ -171,10 +168,7 @@ export default function ResultsPage() {
       <div className="lg:hidden bg-white border-2 border-pink-400 p-3 m-4 rounded-lg">
         <div className="text-center space-y-1">
           <div className="text-black font-bold text-lg">
-            👋 JOIN: {typeof window !== 'undefined' ? window.location.host : ''}/join
-          </div>
-          <div className="text-pink-600 font-bold text-lg">
-            Code: {results?.session.code || '------'}
+            👋 JOIN: {typeof window !== 'undefined' ? window.location.host : ''}/join?code={results?.session.code || '------'}
           </div>
         </div>
       </div>
