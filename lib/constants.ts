@@ -50,28 +50,28 @@ export const FRAMEWORK_OPTIONS = [
 export const PRIZE_TIERS = [
   {
     id: 'tier1',
-    threshold: 15,
+    threshold: 10,
     title: 'Foods of Seattle Pouch',
     description: 'First milestone!',
     image: '/images/prizes/pouch-prize.jpg'
   },
   {
     id: 'tier2', 
-    threshold: 25,
+    threshold: 20,
     title: 'Sub Pop Beanie',
     description: 'Building momentum!',
     image: '/images/prizes/beanie.webp'
   },
   {
     id: 'tier3',
-    threshold: 50,
+    threshold: 40,
     title: 'Kurt Cobain Shirt',
     description: 'Halfway there!',
     image: '/images/prizes/kurt-prize.jpg'
   },
   {
     id: 'tier4',
-    threshold: 100,
+    threshold: 60,
     title: 'AudioBox Casette Player/Recorder',
     description: 'Ultimate achievement unlocked!',
     image: '/images/prizes/boombox-prize.jpg'
